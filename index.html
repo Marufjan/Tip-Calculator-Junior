@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator || Challenge</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="logo">
+      <img src="./images/logo.svg" alt="" />
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+      <!-- Section for form calc -->
+      <section class="form-calculations">
+        <form class="form-1" type="submit">
+          <div class="form-input bill">
+            <img src="./images/icon-dollar.svg" alt="dollors" />
+            <label for="bill">Bill</label>
+            <input
+              class="input bill-value"
+              id="bill"
+              name="bill"
+              type="number"
+              autofocus
+              autocomplete="off"
+              placeholder="0.00"
+              min="1"
+            />
+            <div class="errorBill">Can't be zero</div>
+          </div>
+          <div class="form-tip-selection">
+            <label for="select-tip">Select Tip %</label>
+            <article class="tip-selection-grid">
+              <button value="5" class="box box-tip constant">5%</button>
+              <button value="10" class="box box-tip constant">10%</button>
+              <button value="15" class="box box-tip constant">15%</button>
+              <button value="25" class="box box-tip constant">25%</button>
+              <button value="50" class="box box-tip constant">50%</button>
+              <input
+                class="box custom"
+                min="0"
+                type="number"
+                placeholder="Custom"
+                oninput="this.value = Math.abs(this.value)"
+              />
+            </article>
+          </div>
+          <div class="form-input number">
+            <img src="./images/icon-person.svg" alt="person" />
+            <label for="number-of-people">Number Of People</label>
+            <input
+              class="input numPeople-value"
+              type="number"
+              placeholder="0"
+              min="1"
+            />
+            <div class="errorPeople">Can't be zero</div>
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+      </section>
+
+      <!-- Section for Form Summary -->
+      <section class="form-summary">
+        <div class="form-summary-block">
+          <p class="form-summary-block-text">
+            Tip Amount <span class="per-person">/ person</span>
+          </p>
+          <h1 class="sum sum-tip">$0.00</h1>
+        </div>
+        <div class="form-summary-block">
+          <p class="form-summary-block-text">
+            Total <span class="per-person">/person</span>
+          </p>
+          <h1 class="sum sum-total">$0.00</h1>
+        </div>
+        <button type="reset" class="btn reset">Reset</button>
+      </section>
+    </main>
+  </body>
+</html>
